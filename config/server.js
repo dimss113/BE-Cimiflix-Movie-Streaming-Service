@@ -9,6 +9,9 @@ const likeRouter = require("../app/routes/likeRoute");
 const userRatingRouter = require("../app/routes/userRatingRoute");
 const commentRouter = require("../app/routes/commentRoute");
 const bookmarkRouter = require("../app/routes/bookmarkRoute");
+const subscriptionRouter = require("../app/routes/subscriptionRoute");
+const paymentMethodRouter = require("../app/routes/paymentMethodRoute");
+const paymentRouter = require("../app/routes/paymentRoute");
 const router = require("../app/routes/index.js");
 const express = require("express");
 const dotenv = require("dotenv");
@@ -36,6 +39,9 @@ app.use("/like", likeRouter);
 app.use("/userrating", userRatingRouter);
 app.use("/comment", commentRouter);
 app.use("/bookmark", bookmarkRouter);
+app.use("/subscription", subscriptionRouter);
+app.use("/paymentmethod", paymentMethodRouter);
+app.use("/payment", paymentRouter);
 
 
 

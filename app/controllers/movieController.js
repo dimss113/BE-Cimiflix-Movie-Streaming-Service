@@ -326,6 +326,44 @@ const getAllMoviesByGenreId = async (req, res) => {
     });
 };
 
+const getAllFreeMovies = async (req, res) => {
+  movieService
+    .getAllFreeMovies()
+    .then((movies) => {
+      res.status(200).json({
+        status: "Success",
+        message: "Success get data movie",
+        data: movies,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        status: "Error",
+        message: "internal sever error",
+        data: err,
+      });
+    });
+};
+
+const getAllPaidMovies = async (req, res) => {
+  movieService
+    .getAllPaidMovies()
+    .then((movies) => {
+      res.status(200).json({
+        status: "Success",
+        message: "Success get data movie",
+        data: movies,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        status: "Error",
+        message: "internal sever error",
+        data: err,
+      });
+    });
+};
+
 module.exports = {
   getAllMovies,
   addMovie,
@@ -335,4 +373,6 @@ module.exports = {
   getMoviebyId,
   getMovieBySlug,
   getAllMoviesByGenreId,
+  getAllFreeMovies,
+  getAllPaidMovies,
 };

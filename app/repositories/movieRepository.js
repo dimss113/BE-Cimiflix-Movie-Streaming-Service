@@ -57,6 +57,22 @@ const getAllMoviesByGenreId = (genreId) => {
   });
 };
 
+const getAllFreeMovies = () => {
+  return movie.findAll({
+    where: {
+      moviestatus_id: 1,
+    },
+  });
+};
+
+const getAllPaidMovies = () => {
+  return movie.findAll({
+    where: {
+      moviestatus_id: 3,
+    },
+  });
+};
+
 module.exports = {
   getAllMovies,
   addMovie,
@@ -66,4 +82,6 @@ module.exports = {
   getMoviebyId,
   getMovieBySlug,
   getAllMoviesByGenreId,
+  getAllFreeMovies,
+  getAllPaidMovies,
 };

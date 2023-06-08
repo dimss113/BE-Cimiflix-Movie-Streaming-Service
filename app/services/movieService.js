@@ -72,6 +72,24 @@ const getAllMoviesByGenreId = async (genreId) => {
   }
 };
 
+const getAllFreeMovies = async () => {
+  try {
+    const movies = await movieRepository.getAllFreeMovies();
+    return movies;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
+const getAllPaidMovies = async () => {
+  try {
+    const movies = await movieRepository.getAllPaidMovies();
+    return movies;
+  } catch (err) {
+    throw new Error(err);
+  }
+};
+
 module.exports = {
   getAllMovies,
   addMovie,
@@ -81,4 +99,6 @@ module.exports = {
   getMoviebyId,
   getMovieBySlug,
   getAllMoviesByGenreId,
+  getAllFreeMovies,
+  getAllPaidMovies,
 };

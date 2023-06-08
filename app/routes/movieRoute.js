@@ -10,5 +10,7 @@ router.get("/movie-photo/:id", movieController.getMoviePhotobyId);
 router.get("/movie/:id", movieController.getMoviebyId);
 router.get("/movie-slug/:slug", movieController.getMovieBySlug);
 router.get("/movies-genre/:id", movieController.getAllMoviesByGenreId);
+router.get("/movies-free", movieController.getAllFreeMovies);
+router.get("/movies-paid", movieController.getAllPaidMovies);
 
 module.exports = router;
