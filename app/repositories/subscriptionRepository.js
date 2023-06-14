@@ -24,6 +24,10 @@ const getSubscriptionByUserId = (userId) => {
   return subscription.findAll({ where: { user_id: userId, status: 0 } });
 };
 
+const getSubscriptionByStatus = (status) => {
+  return subscription.findAll({ where: { status } });
+};
+
 module.exports = {
   getAllSubscriptions,
   getSubscriptionById,
@@ -31,4 +35,5 @@ module.exports = {
   updateSubscription,
   deleteSubscription,
   getSubscriptionByUserId,
+  getSubscriptionByStatus,
 };

@@ -61,6 +61,17 @@ const getSubscriptionByUserId = async (userId) => {
   }
 };
 
+const getSubscriptionByStatus = async (status) => {
+  try {
+    const subscription = await subscriptionRepository.getSubscriptionByStatus(
+      status
+    );
+    return subscription;
+  } catch (error) {
+    throw error;
+  }
+};
+
 module.exports = {
   getAllSubscriptions,
   getSubscriptionById,
@@ -68,4 +79,5 @@ module.exports = {
   updateSubscription,
   deleteSubscription,
   getSubscriptionByUserId,
+  getSubscriptionByStatus,
 };

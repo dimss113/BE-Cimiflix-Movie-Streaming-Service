@@ -120,6 +120,27 @@ const getSubscriptionByUserId = async (req, res) => {
     });
 };
 
+const getSubscriptionByStatus = async (req, res) => {
+  const status = req.params.status;
+  subscriptionService
+
+    .getSubscriptionByStatus(status)
+    .then((subscription) => {
+      res.status(200).json({
+        status: "success",
+        message: "Successfully fetched subscription by status",
+        data: subscription,
+      });
+    })
+    .catch((error) => {
+      res.status(500).json({
+        status: "error",
+        message: "Internal server error",
+        error: error,
+      });
+    });
+};
+
 module.exports = {
   getAllSubscriptions,
   getSubscriptionById,
@@ -127,4 +148,5 @@ module.exports = {
   updateSubscription,
   deleteSubscription,
   getSubscriptionByUserId,
+  getSubscriptionByStatus,
 };
